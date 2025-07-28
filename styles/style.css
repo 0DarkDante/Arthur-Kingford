@@ -16,7 +16,6 @@ body {
   font-family: 'Bahnschrift', sans-serif;
   font-weight: 300;
   background-color: #000000;
-  color: #111;
 }
 
 header {
@@ -147,19 +146,6 @@ a:active {
   animation: logoFadeIn 0.8s ease-in-out;
 }
 
-/* Посилання — плавний перехід кольору */
-a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1.25rem;
-  transition: color 0.3s ease;
-}
-
-a:hover,
-a:active {
-  color: #fff;
-}
-
 /* Бургер лінії — плавна анімація */
 .burger div {
   width: 25px;
@@ -259,4 +245,78 @@ a:active {
         transform: translateY(-25%);
       }
     }
+}
+
+/* hero section */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* прозорий чорний, щоб фон просвічував */
+  backdrop-filter: blur(6px);
+  /* м'яке розмиття */
+  padding: 1.5rem 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  margin-top: -100px;
+  padding-top: 100px;
+  background: url('/images/chanche.jpg') no-repeat top center;
+background-size: 100% auto;
+  background-position: center 45%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  overflow: hidden;
+  height: 1000px;
+}
+
+/* Темна підкладка (опціонально) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Контент поверх зображення */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero__slogan {
+  font-size: 2.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInHeroText 1s ease-out forwards;
+  text-align: center;
+    color: rgba(255, 255, 255, .6);
+}
+
+@keyframes fadeInHeroText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__slogan {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
 }
