@@ -1,0 +1,84 @@
+ @font-face {
+      font-family: 'Bahnschrift';
+      src: local('Bahnschrift Light'), local('Bahnschrift');
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    body {
+      font-family: 'Bahnschrift', sans-serif;
+      font-weight: 300;
+      background-color: #000000;
+      color: #111;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    .nav-left,
+    .nav-right {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    /* Мобільне меню (бургер) */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .nav-left,
+      .nav-right {
+        display: none;
+      }
+
+      .logo {
+        position: static;
+        transform: none;
+      }
+
+      .burger {
+        display: flex;
+      }
+    }
