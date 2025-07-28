@@ -1,27 +1,34 @@
- @font-face {
-      font-family: 'Bahnschrift';
-      src: local('Bahnschrift Light'), local('Bahnschrift');
-      font-weight: 300;
-      font-style: normal;
-    }
+@font-face {
+  font-family: 'Bahnschrift';
+  src: local('Bahnschrift Light'), local('Bahnschrift');
+  font-weight: 300;
+  font-style: normal;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      color: rgba(255, 255, 255, .6);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, .6);
+}
 
-    body {
-      font-family: 'Bahnschrift', sans-serif;
-      font-weight: 300;
-      background-color: #000000;
-      color: #111;
-    }
+body {
+  font-family: 'Bahnschrift', sans-serif;
+  font-weight: 300;
+  background-color: #000000;
+  color: #111;
+}
 
-    header {
-      padding: 1.5rem 2rem;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #000;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+  /* Легка тінь */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
 .container {
   max-width: 1200px;
@@ -29,83 +36,227 @@
   padding: 0 1rem;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
-    .nav-left,
-    .nav-right {
-      display: flex;
-    }
+/* Навігація ліворуч і праворуч */
+header .container {
+  justify-content: space-around;
+}
 
-    .nav-left a,
-    .nav-right a {
-      padding: 0.9375rem 1.25rem;
-    }
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.25rem;
+}
 
-    .logo {
-      position: absolute;
-      left: 49%;
-      transform: translateX(-50%);
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-    }
+.nav-left a,
+.nav-right a {
+  padding: 0.9375rem 1.25rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
 
-  .logo-icon {
-    height: 30px;
-    object-fit: contain;
-    margin-top: 2px;
+/* Логотип */
+.logo {
+  position: absolute;
+  left: 49%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.logo-icon {
+  height: 30px;
+  object-fit: contain;
+  margin-top: 2px;
+}
+
+.logo-text {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Посилання */
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: #fff;
+}
+
+/* Бургер-меню */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      font-size: 1.25rem;
-      transition: color 0.2s;
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    a:hover,
-    a:active {
-      color: #fff;
-    }
+.nav-left,
+.nav-right,
+.logo {
+  animation: fadeSlideIn 0.8s ease forwards;
+}
 
-  .logo-text {
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: #fff;
+.nav-left {
+  animation-delay: 0.2s;
+}
+
+.logo {
+  animation-delay: 0.4s;
+}
+
+.nav-right {
+  animation-delay: 0.6s;
+}
+
+/* Логотип — плавне входження */
+.logo {
+  animation: logoFadeIn 0.8s ease-in-out;
+}
+
+/* Посилання — плавний перехід кольору */
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:active {
+  color: #fff;
+}
+
+/* Бургер лінії — плавна анімація */
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Мобільне меню */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #000;
+  padding: 1.5rem 2rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Відкрите меню */
+.mobile-menu.open {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInDown 0.4s ease;
+}
+
+/* Адаптивний логотип та бургер */
+@media (max-width: 768px) {
+
+  .nav-left,
+  .nav-right {
+    display: none;
   }
 
-    /* Мобільне меню (бургер) */
-    .burger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
+  .nav-mobile-open .nav-left,
+  .nav-mobile-open .nav-right {
+    display: flex;
+    animation: fadeInDown 0.4s ease;
+  }
 
-    .burger div {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-    }
+  .logo {
+    position: static;
+    transform: none;
+    order: 1;
+  }
 
-    @media (max-width: 768px) {
-      .nav-left,
-      .nav-right {
-        display: none;
+  .burger {
+    display: flex;
+    order: 2;
+  }
+  
+    /* Мобільна версія */
+    /* Анімація появи меню */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10%);
       }
-
-      .logo {
-        position: static;
-        transform: none;
-      }
-
-      .burger {
-        display: flex;
+  
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
+  
+    @keyframes fadeInCenter {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+  
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  
+    @keyframes logoFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+  
+      to {
+        opacity: 1;
+        transform: translateY(-25%);
+      }
+    }
+}
