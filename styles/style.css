@@ -40,7 +40,15 @@
       font-size: 1.5rem;
       font-weight: 300;
       letter-spacing: 1px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
     }
+
+  .logo-icon {
+    height: 24px;
+    object-fit: contain;
+  }
 
     a {
       text-decoration: none;
