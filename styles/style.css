@@ -207,6 +207,10 @@ a:active {
     display: flex;
     order: 2;
   }
+
+    .logo-icon {
+      display: none;
+    }
   
     /* Мобільна версія */
     /* Анімація появи меню */
@@ -265,7 +269,7 @@ a:active {
   /* або 100vh якщо хочеш всю висоту екрану */
   margin-top: -100px;
   padding-top: 100px;
-  background-image: url('../images/chanche.jpg');
+  background-image: url('../images/photo_2025-07-28_13-14-17.jpg');
   background-repeat: no-repeat;
   background-position: center 45%;
   background-size: 100% auto;
