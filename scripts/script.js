@@ -34,7 +34,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   status.style.color = '#999';
 
   try {
-    const response = await fetch('https://formspree.io/f/xzzvgjpr', {
+    const response = await fetch('https://formspree.io/f/xovlwyzn', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -43,14 +43,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     });
 
     if (response.ok) {
-      status.textContent = 'Надіслано успішно!';
+      status.textContent = 'Sent successfully!';
       status.style.color = 'green';
       form.reset();
     } else {
-      throw new Error('Щось пішло не так 😞');
+      throw new Error('Something went wrong. 😞');
     }
   } catch (error) {
-    status.textContent = 'Помилка при надсиланні. Спробуйте ще раз.';
+    status.textContent = 'Error sending. Please try again.';
     status.style.color = 'red';
   }
 
