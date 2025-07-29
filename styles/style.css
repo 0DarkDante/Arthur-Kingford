@@ -475,3 +475,100 @@ form#contact-form button:disabled {
     transform: translateY(0);
   }
 }
+
+/* footer */
+
+.site-footer {
+  background-color: #111;
+  /* Темний фон */
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem 1rem;
+  font-family: 'Bahnschrift', sans-serif;
+  user-select: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-weight: 300;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.footer-logo img {
+  width: 27px;
+  filter: brightness(0) invert(1);
+  user-select: none;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  transition: transform 0.25s ease, filter 0.25s ease, color 0.3s ease;
+  filter: brightness(0.7);
+}
+
+.social-link:hover img[alt="Instagram"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1251%) hue-rotate(1deg) brightness(97%) contrast(104%);
+}
+
+/* YouTube червоний */
+.social-link:hover img[alt="YouTube"] {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(5880%) hue-rotate(-9deg) brightness(97%) contrast(104%);
+}
+
+/* LinkedIn синій */
+.social-link:hover img[alt="LinkedIn"] {
+  filter: brightness(0) saturate(100%) invert(26%) sepia(79%) saturate(1641%) hue-rotate(184deg) brightness(93%) contrast(93%);
+}
+
+.social-link img {
+  height: 28px;
+  width: 28px;
+  user-select: none;
+}
+
+.social-link:hover,
+.social-link:focus {
+  transform: scale(1.1);
+  filter: brightness(1);
+  outline: none;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-size: 1.1rem;
+  }
+}
+
+.social-links img {
+  color: #fff;
+}
