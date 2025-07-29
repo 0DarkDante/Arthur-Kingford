@@ -21,7 +21,6 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
   // зібрати дані
   const data = {
-    name: form.name.value,
     email: form.email.value,
     message: form.message.value
   };
