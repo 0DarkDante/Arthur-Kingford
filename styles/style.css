@@ -271,7 +271,7 @@ a:active {
   padding-top: 100px;
   background-image: url('../images/photo_2025-07-28_13-14-17.jpg');
   background-repeat: no-repeat;
-  background-position: center 45%;
+  background-position: center 8%;
   background-size: 100% auto;
   background-color: #000;
   display: flex;
@@ -331,5 +331,147 @@ a:active {
   .hero__slogan {
     font-size: 2rem;
     padding: 0 1rem;
+  }
+}
+
+/* contact */
+
+/* Контейнер форми */
+form#contact-form {
+  max-width: 600px;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: #111;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.06);
+  animation: fadeInForm 1s ease forwards;
+}
+
+/* Заголовок */
+form#contact-form h2 {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Підпис до поля */
+form#contact-form label {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  display: block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Поля */
+form#contact-form input,
+form#contact-form textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  resize: none;
+  /* Заборонити ручне розтягування */
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Фокус */
+form#contact-form input:focus,
+form#contact-form textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, .6);
+  background: #222;
+}
+
+/* Кнопка */
+form#contact-form button {
+  background: rgba(255, 255, 255, .6);
+  color: #000;
+  padding: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+  width: 175px;
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+form#contact-form button:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+form#contact-form button:disabled {
+  background: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Статус повідомлення */
+#form-status {
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeStatus 0.5s ease forwards;
+}
+
+#form-status.success {
+  color: #00e676;
+}
+
+#form-status.error {
+  color: #ef5350;
+}
+
+#form-status.sending {
+  color: #ccc;
+}
+
+/* Анімації */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInForm {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeStatus {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
