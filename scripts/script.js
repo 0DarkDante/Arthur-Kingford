@@ -12,8 +12,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   const form = e.target;
   const status = document.getElementById('form-status');
 
+  const gotchaField = form.elements['_gotcha'];
+
   // honeypot check
-  if (form._gotcha.value !== '') {
+  if (gotchaField && gotchaField.value !== '') {
     status.textContent = 'Виявлено спам. Повідомлення не надіслано.';
     status.style.color = 'red';
     return;
@@ -26,7 +28,8 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   };
 
   // відключити кнопку
-  form.querySelector('button').disabled = true;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
   status.textContent = 'Надсилаємо...';
   status.style.color = '#999';
 
@@ -53,6 +56,6 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
   // увімкнути кнопку через 5 сек
   setTimeout(() => {
-    form.querySelector('button').disabled = false;
+    submitBtn.disabled = false;
   }, 5000);
 });
