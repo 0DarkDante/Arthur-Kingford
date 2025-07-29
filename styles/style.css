@@ -477,14 +477,28 @@ form#contact-form button:disabled {
 }
 
 /* footer */
-
 .site-footer {
   background-color: #111;
-  /* Темний фон */
   color: rgba(255, 255, 255, 0.7);
   padding: 2rem 1rem;
   font-family: 'Bahnschrift', sans-serif;
   user-select: none;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  border-radius: 999px;
+  opacity: 0.85;
+  pointer-events: none;
 }
 
 .footer-container {
@@ -495,6 +509,8 @@ form#contact-form button:disabled {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-logo {
@@ -519,10 +535,26 @@ form#contact-form button:disabled {
 
 .social-link {
   display: inline-flex;
-  transition: transform 0.25s ease, filter 0.25s ease, color 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   filter: brightness(0.7);
 }
 
+.social-link img {
+  height: 28px;
+  width: 28px;
+  user-select: none;
+  transition: filter 0.25s ease;
+}
+
+/* Instagram градієнт */
 .social-link:hover img[alt="Instagram"] {
   filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1251%) hue-rotate(1deg) brightness(97%) contrast(104%);
 }
@@ -537,17 +569,13 @@ form#contact-form button:disabled {
   filter: brightness(0) saturate(100%) invert(26%) sepia(79%) saturate(1641%) hue-rotate(184deg) brightness(93%) contrast(93%);
 }
 
-.social-link img {
-  height: 28px;
-  width: 28px;
-  user-select: none;
-}
-
 .social-link:hover,
 .social-link:focus {
   transform: scale(1.1);
-  filter: brightness(1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.07);
   outline: none;
+  filter: brightness(1);
 }
 
 .footer-copy {
@@ -567,8 +595,4 @@ form#contact-form button:disabled {
   .footer-logo {
     font-size: 1.1rem;
   }
-}
-
-.social-links img {
-  color: #fff;
 }
