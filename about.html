@@ -65,64 +65,71 @@
     </section>
 
     <main class="about-main">
-      <div class="about-content">
-        <p class="fade-in">
-          <strong>Arthur Kingford</strong>
-          <span style="opacity: 0.7">(real name: Artur Dotsiak)</span> is a
-          Ukrainian musician, composer, educator, and music coach based in the
-          UK. <em>His musical paradigm shifted at the age of 17</em> when he won
-          the Grand Prix at his first national competition —
-          <em>marking the beginning of his professional journey</em>.
-        </p>
+      <section class="about-text-section">
+        <div class="about-text-container">
+          <p class="fade-in">
+            <strong>Arthur Kingford</strong>
+            <span class="dim">(real name: Artur Dotsiak)</span> is a Ukrainian
+            musician, composer, educator, and music coach based in the UK.
+            <em>His musical paradigm shifted at the age of 17</em> when he won
+            the Grand Prix at his first national competition —
+            <em>marking the beginning of his professional journey</em>.
+          </p>
 
-        <p class="fade-in">
-          A graduate of the <em>National Music Academy of Ukraine</em>, Arthur
-          combines classical minimalism with modern neoclassicism, performing
-          contemporary, baroque, and modern music. He is also the recipient of
-          the Presidential Scholarship of Ukraine
-          <span style="opacity: 0.8">(2022, 2025)</span> and the Kyiv Mayor’s
-          Award <span style="opacity: 0.8">(2022, 2023)</span>. As an
-          accordionist, he ranked among the world’s top 20 in the
-          <em>Masters category</em>.
-        </p>
+          <p class="fade-in">
+            A graduate of the <em>National Music Academy of Ukraine</em>, Arthur
+            combines classical minimalism with modern neoclassicism, performing
+            contemporary, baroque, and modern music. He is also the recipient of
+            the Presidential Scholarship of Ukraine
+            <span class="dim">(2022, 2025)</span> and the Kyiv Mayor’s Award
+            <span class="dim">(2022, 2023)</span>. As an accordionist, he ranked
+            among the world’s top 20 in the <em>Masters category</em>.
+          </p>
 
-        <p class="fade-in">
-          Arthur plays multiple instruments: accordion, piano, keyboard,
-          harpsichord, sopilka, tambourine, and various folk instruments. His
-          original compositions reflect his <em>personal experiences</em> and
-          seek to create a dialogue with the audience through sound. As an
-          educator and music coach, he has taught numerous students — both
-          individually and in groups — fostering the next generation of
-          musicians. He actively supports young talent and, in 2021,
-          co-organized the <em>SoloFest: Dnirpovision</em> competition for
-          emerging performers.
-        </p>
-        <p>
-          Currently continuing his artistic journey in the UK, Arthur is
-          developing new projects, compositions, and performances, sharing his
-          passion for music and its power to connect people.
-        </p>
-      </div>
+          <p class="fade-in">
+            Arthur plays multiple instruments: accordion, piano, keyboard,
+            harpsichord, sopilka, tambourine, and various folk instruments. His
+            original compositions reflect his <em>personal experiences</em> and
+            seek to create a dialogue with the audience through sound. As an
+            educator and music coach, he has taught numerous students — both
+            individually and in groups — fostering the next generation of
+            musicians. He actively supports young talent and, in 2021,
+            co-organized the <em>SoloFest: Dnirpovision</em> competition for
+            emerging performers.
+          </p>
+
+          <p class="fade-in">
+            Currently continuing his artistic journey in the UK, Arthur is
+            developing new projects, compositions, and performances, sharing his
+            passion for music and its power to connect people.
+          </p>
+        </div>
+      </section>
     </main>
 
     <script>
-      const fadeInElements = document.querySelectorAll(".fade-in");
+      const faders = document.querySelectorAll(".fade-in");
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target); // одноразова поява
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-        }
-      );
+      const appearOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-      fadeInElements.forEach((el) => observer.observe(el));
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        observer
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      appearOptions);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
     </script>
 
     <footer class="site-footer">

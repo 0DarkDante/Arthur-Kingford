@@ -622,51 +622,29 @@ form#contact-form button:disabled {
   align-items: center;
   min-height: 100vh;
 }
-
-.about-content {
-  max-width: 750px;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  font-size: 1.25rem;
-  line-height: 1.9;
-  padding: 2rem;
-  background-color: #111;
-  border-left: 4px solid #666;
-  border-radius: 6px;
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.05);
+.about-text-section {
+  padding: 60px 20px;
+  background: none;
+  color: #111;
+  font-family: 'Georgia', serif;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 19px;
 }
 
-/* Анімація */
-.fade-in {
+.about-text-container p {
+  margin-bottom: 2rem;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Коли елемент в зоні видимості */
-.fade-in.visible {
+.about-text-container p.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.about-content p {
-  margin: 0;
-}
-
-.about-content p strong {
-  color: #fff;
-}
-
-.about-content p em {
-  color: #ccc;
-  font-style: italic;
-}
-
-/* Адаптив */
-@media (max-width: 768px) {
-  .about-content {
-    font-size: 1.1rem;
-    padding: 1.5rem;
-  }
+.dim {
+  opacity: 0.7;
 }
