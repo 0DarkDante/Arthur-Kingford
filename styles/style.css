@@ -22,7 +22,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #000;
+  background-color: #000000ba;
   padding: 1.5rem 2rem;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
   /* Легка тінь */
@@ -256,7 +256,7 @@ a:active {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
   /* прозорий чорний, щоб фон просвічував */
   backdrop-filter: blur(6px);
   /* м'яке розмиття */
@@ -595,4 +595,12 @@ form#contact-form button:disabled {
   .footer-logo {
     font-size: 1.1rem;
   }
+}
+
+/* about */
+
+.hero-about {
+  background-image: url('../images/about.jpg');
+  background-position: 107% -34%;
+  background-size: 110% auto;
 }
