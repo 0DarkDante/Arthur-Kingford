@@ -675,6 +675,6 @@ form#contact-form button:disabled {
 
 .hero-works {
   background-image: url('../images/Works.jpg');
-  background-position: 107% -34%;
-  background-size: 110% auto;
+background-position: 100% 28%;
+  background-size: 114% auto;
 }
