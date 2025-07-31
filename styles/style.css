@@ -336,6 +336,28 @@ a:active {
 
 /* contact */
 
+.contact h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.contact p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 2em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+
 /* Контейнер форми */
 form#contact-form {
   max-width: 600px;
