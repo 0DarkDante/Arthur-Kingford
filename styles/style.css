@@ -670,3 +670,11 @@ form#contact-form button:disabled {
 .dim {
   opacity: 0.7;
 }
+
+/* works */
+
+.hero-works {
+  background-image: url('../images/Works.jpg');
+  background-position: 107% -34%;
+  background-size: 110% auto;
+}
