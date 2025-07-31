@@ -669,6 +669,12 @@ form#contact-form button:disabled {
 
 /* works */
 
+.hero-works {
+  background-image: url('../images/Works.jpg');
+    background-position: 100% 27%;
+      background-size: 117% auto;
+}
+
 .works-main {
   background-color: #000;
   color: #f5f5f5;
