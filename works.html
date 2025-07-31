@@ -64,6 +64,97 @@
       </div>
     </section>
 
+    <main class="works-main">
+      <section class="works-text-section">
+        <div class="works-text-container">
+          <p class="fade-in">
+            A pivotal moment in Arthur’s artistic career came at the age of 17
+            when he won the Grand Prix at a national music competition in
+            Ukraine. This victory marked the turning point from which his
+            professional journey as a performer truly began.
+          </p>
+
+          <p class="fade-in">
+            In 2020, Arthur competed at the
+            <span class="dim">International Open Trophy</span>, sharing the
+            stage in the same category with his childhood idol – an experience
+            that became both inspiring and formative. Two years later, in 2022,
+            he achieved another milestone by entering the
+            <span class="dim">Top 20 accordionists worldwide</span> at the
+            prestigious <span class="dim">Trophée Mondial de l’Accordéon.</span>
+          </p>
+
+          <p class="fade-in">
+            Alongside his concert career, Arthur is actively engaged in
+            research. His academic work explores musical heritage and
+            performance practices, contributing to the preservation and
+            development of cultural traditions.
+            <span class="dim">Research works include:</span>
+          </p>
+          <ul class="fade-in">
+            <li>
+              <em
+                >Alexander Technique: Fundamentals and Influence on the
+                Performance of Instrumental Musicians</em
+              >
+            </li>
+            <li>
+              <em
+                >The Phenomenon of Volodymyr Lutsiv’s Creativity in the Context
+                of Ukrainian Cultural Processes of the 20th–21st Centuries</em
+              >
+            </li>
+          </ul>
+
+          <p class="fade-in">
+            As an <span class="dim">educator</span>, Arthur has conducted over
+            2,500 private lessons, mentoring students of various levels and
+            backgrounds. His teaching combines technical mastery with artistic
+            individuality, nurturing the next generation of musicians.
+          </p>
+
+          <p class="fade-in">
+            Composition holds a significant place in his creative path. Each of
+            Arthur’s works is a personal reflection, combining emotional depth
+            with innovative approaches. His notable pieces include:
+          </p>
+          <ul class="fade-in">
+            <li><em>Glacier</em></li>
+            <li><em>Gentle Sparks</em></li>
+            <li><em>Heritage</em></li>
+            <li><em>Shadow</em></li>
+            <li><em>Elysium</em></li>
+          </ul>
+
+          <p class="fade-in">
+            Arthur Kingford continues to expand his artistic vision, taking part
+            in cultural projects, developing new repertoire, and enriching the
+            musical landscape as a performer, composer, and educator.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const elements = document.querySelectorAll(
+        ".works-text-container p, .works-text-container ul"
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    </script>
+
     <footer class="site-footer">
       <div class="container footer-container">
         <div class="footer-logo">

@@ -645,7 +645,7 @@ form#contact-form button:disabled {
   min-height: 100vh;
 }
 .about-text-section {
-  padding: 60px 20px;
+  padding: 0px 20px;
   background: none;
   color: #111;
   font-family: 'Georgia', serif;
@@ -667,14 +667,67 @@ form#contact-form button:disabled {
   transform: translateY(0);
 }
 
-.dim {
-  opacity: 0.7;
-}
-
 /* works */
 
-.hero-works {
-  background-image: url('../images/Works.jpg');
-background-position: 100% 28%;
-  background-size: 114% auto;
+.works-main {
+  background-color: #000;
+  color: #f5f5f5;
+  font-family: 'Georgia', serif;
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.works-text-section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Georgia', serif;
+  color: #111;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.works-text-container p,
+.works-text-container ul {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 1.5rem;
+}
+
+.works-text-container p.visible,
+.works-text-container ul.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.works-text-container ul {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  list-style-type: disc;
+  color: rgba(255, 255, 255, .6);
+}
+
+.works-text-container li {
+  margin-bottom: 0.5rem;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.works-text-container strong {
+  font-weight: bold;
+  color: #000;
+}
+
+.works-text-container em {
+  font-style: italic;
+  color: rgba(255, 255, 255, .6);
+}
+
+.dim {
+  opacity: 0.6;
+  font-size: 0.95em;
 }
