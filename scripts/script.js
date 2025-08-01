@@ -21,8 +21,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     return;
   }
 
-  // зібрати дані
+  // зібрати дані з новими полями
   const data = {
+    firstName: form.firstName.value,
+    lastName: form.lastName.value,
     email: form.email.value,
     message: form.message.value
   };
@@ -59,4 +61,3 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     submitBtn.disabled = false;
   }, 5000);
 });
-
