@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arthurkingford.com/sitemap.xml
+Sitemap: https://arturdotsiak.com/sitemap.xml
